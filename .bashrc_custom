@@ -1,0 +1,31 @@
+alias e=emacs
+
+alias shoshin_vpn='cd ~/School/shoshin_vpn/shoshin-vpn/; sudo openvpn ./shoshin.conf'
+
+alias dfs_server_one='ssh -i ~/.ssh/dfs_server_one.pem ubuntu@ec2-54-200-2-215.us-west-2.compute.amazonaws.com'
+
+PS1="\[\033[0;37m\][\u@\h:\w]$\[\033[0m\]"
+#PS1="$ \[\033[0m\]"
+
+# enable color support of ls and also add handy aliases
+alias ls='ls --color=auto'
+alias ll='ls -alFG'
+
+export HISTCONTROL=ignoreboth
+export IGNOREEOF=3
+
+# terminal setting is stored in ~/.dir_colors
+eval `dircolors -b ~/.dir_colors`
+
+
+## show color in man page ##
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+export LESS_TERMCAP_mb=$'\E[01;31m'
+## show color in man page ##
+
