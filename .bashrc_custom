@@ -1,9 +1,10 @@
-alias e=emacs
+# emacs shortcut
+alias e='emacs -nw'
 
+# useless shoshin vpn alias
 alias shoshin_vpn='cd ~/School/shoshin_vpn/shoshin-vpn/; sudo openvpn ./shoshin.conf'
 
-alias dfs_server_one='ssh -i ~/.ssh/dfs_server_one.pem ubuntu@ec2-54-200-2-215.us-west-2.compute.amazonaws.com'
-
+# making prompt more readable
 PS1="\[\033[0;37m\][\u@\h:\w]$\[\033[0m\]"
 #PS1="$ \[\033[0m\]"
 
@@ -11,7 +12,10 @@ PS1="\[\033[0;37m\][\u@\h:\w]$\[\033[0m\]"
 alias ls='ls --color=auto'
 alias ll='ls -alFG'
 
-export HISTCONTROL=ignoreboth
+# history will ignore both duplicates and spaces; this also erases duplicated entries in history
+export HISTCONTROL=ignoreboth:erasedups
+
+# control-D will not exit right away
 export IGNOREEOF=3
 
 # terminal setting is stored in ~/.dir_colors
@@ -29,3 +33,15 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 export LESS_TERMCAP_mb=$'\E[01;31m'
 ## show color in man page ##
 
+# HISTSIZE     --> number of lines of command to store in history "list" (memory)
+# HISTFILESIZE --> number of lines of command to store in history "file"
+# The history "file" is not updated as you type the commands.
+# The commands get stored in a "list" separately (accessed by the history command).
+# The number of these stored commands is controlled by HISTSIZE  value.
+# When the shell (interactive) exits, the last  $HISTSIZE  lines are copied/appended to  $HISTFILE  from that "list".
+# If  HISTFILESIZE  is set, then after this operation, it is ensured that only  $HISTFILESIZE  lines (latest) exist in  $HISTFILE .
+# And when the shell starts, the "list" is initialized from  $HISTFILE  upto a maximum of  $HISTSIZE  commands.
+# Source : http://www.unix.com/unix-dummies-questions-answers/191301-histsize-histfilesize.html by elixir_sinari
+
+export HISTSIZE=10000
+export HISTFILESIZE=10000
