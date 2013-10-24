@@ -28,7 +28,7 @@
 
 (let (
       (*background*         "black")
-      ;;(*background*         "#1D2021")
+;;      (*background*         "#1D2021")
       (*comments*           "#8C8C8C")
       (*constant*           "#FF80F4")
       (*current-line*       "#151515")
@@ -45,7 +45,8 @@
       (*mode-inactive-bg*   "#222")
       (*mode-line-fg*       "#EEDC82")
       (*mode-inactive-fg*   "#555")
-      (*normal*             "#DEDEDE")
+      (*normal*             "#00FF00")
+;;      (*normal*             "#DEDEDE")
       (*number*             "#FC580C")
       (*operators*          "#FF80F4")
       (*warning*            "#FF6C60")
