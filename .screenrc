@@ -1,6 +1,10 @@
 ## color 256
 term xterm-256color
 
+## this makes mouse scroll work
+## source: http://superuser.com/questions/485679/gnu-screen-with-local-scrollback-buffer
+termcapinfo xterm* ti@:te@
+
 # THIS IS THE PRETTY BIT
 #change the hardstatus settings to give an window list at the bottom of the                                                                        
 ##screen, with the time and date and with the current window highlighted                                                                            
@@ -9,3 +13,10 @@ hardstatus             alwayslastline
 
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
+
+# I use control+a for beginning-of-line, this remaps it to Control-t
+escape ``
+
+# Bind tick+e to show the tick character since tick+tick is too convenience to toggle windows
+escape `e
+ 

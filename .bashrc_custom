@@ -1,3 +1,5 @@
+# Xu Cui's customized .bashrc_cutom file
+
 # emacs shortcut
 alias e='emacs -nw'
 
@@ -45,3 +47,13 @@ export LESS_TERMCAP_mb=$'\E[01;31m'
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+
+# diffdir is a function to compare to directories recursively
+diffdir(){
+	if [ $# -ne 2 ]
+	then
+		echo "Usage: diffdir dir_one dir_two"
+		return 16666
+	fi
+	diff --brief -bur ${1} ${2}
+}
