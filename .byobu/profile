@@ -3,4 +3,4 @@
 # commented out the next line and added the line after next line
 #source $BYOBU_PREFIX/share/byobu/profiles/common
 
-source ${HOME}/dotfiles/.byobu/common
+source $BYOBU_PREFIX/share/byobu/profiles/common

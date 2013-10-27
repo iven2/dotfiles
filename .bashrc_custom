@@ -57,3 +57,6 @@ diffdir(){
 	fi
 	diff --brief -bur ${1} ${2}
 }
+
+# export byobu directory so byobu will read my configurations
+export BYOBU_PREFIX=${HOME}/.byobu
