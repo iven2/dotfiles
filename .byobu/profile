@@ -1,0 +1,6 @@
+# xcui change:
+# copied $BYOBU_PREFIX/share/bybobu/profiles/common to ${HOME}/dotfiles/.byobu/common
+# commented out the next line and added the line after next line
+#source $BYOBU_PREFIX/share/byobu/profiles/common
+
+source ${HOME}/dotfiles/.byobu/common
