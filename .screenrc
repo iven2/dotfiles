@@ -6,15 +6,16 @@ term xterm-256color
 termcapinfo xterm* ti@:te@
 
 # THIS IS THE PRETTY BIT
-#change the hardstatus settings to give an window list at the bottom of the                                                                        
-##screen, with the time and date and with the current window highlighted                                                                            
-hardstatus             alwayslastline                                                                                                                          
+#change the hardstatus settings to give an window list at the bottom of the
+##screen, with the time and date and with the current window highlighted                  
+hardstatus             alwayslastline
+# The following hardstatus is useless, and just kept here for future reference
 #hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+# The next line is commented out because byobu takes care of the status bar configuration for me
+# if I use screen alone, I should uncomment the next line
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
-
-
-# I use control+a for beginning-of-line, this remaps it to Control-t
+# I use control+a for beginning-of-line, this remaps it to tick
 escape ``
 
 # Bind tick+e to show the tick character since tick+tick is too convenience to toggle windows
