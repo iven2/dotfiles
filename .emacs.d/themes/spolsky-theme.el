@@ -46,14 +46,17 @@
       (*mode-line-fg*       "#EEDC82")
       (*mode-inactive-fg*   "#555")
       (*normal*             "#00FF00")
-;;      (*normal*             "#DEDEDE")
+      ;; (*normal*             "#DEDEDE")
       (*number*             "#FC580C")
       (*operators*          "#FF80F4")
       (*warning*            "#FF6C60")
       (*regexp*             "#A63A62")
       (*string*             "#EEDC82")
       (*variable*           "#FD971F")
-      (*visual-selection*   "#555"))
+      (*visual-background*  "#DC143C")
+      (*visual-highlight*   "#7171C6")
+      (*visual-selection*   "#FFFAFA"))
+      ;; (*visual-selection*   "#555"))
 
   (custom-theme-set-faces
    'spolsky
@@ -104,9 +107,9 @@
    `(show-paren-match ((t (:background, *keywords* :foreground, *normal* :weight bold))))
 
    ;; search
-   `(isearch ((t (:background, *regexp* :foreground, *visual-selection*))))
+   `(isearch ((t (:background, *visual-background* :foreground, *visual-selection*))))
    `(isearch-fail ((t (:background, *warning*))))
-   `(lazy-highlight ((t (:background, *operators* :foreground, *visual-selection*))))
+   `(lazy-highlight ((t (:background, *visual-highlight* :foreground, *visual-selection*))))
 
    ))
 
