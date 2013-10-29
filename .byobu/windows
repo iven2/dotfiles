@@ -1,4 +1,0 @@
-# Autoload three screen tabs.
-screen -t emacs 0
-screen -t run 1
-screen -t bash 2

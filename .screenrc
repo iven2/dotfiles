@@ -78,3 +78,14 @@ defscrollback 30000
 # bind Control+shift+tab as focus up
 bindkey "^[[Z" focus up 
 
+autodetach             on             # default: on
+defutf8 	       on             # unicode by default
+activity	       "activity in %n (%t) [%w:%s]~"
+
+# Autoload three screen tabs.
+# tried to put "this" tab configure in .byobu/windows
+# but somehow if this is put there, it corrupts the emacs configuration for line number color
+# so have to keep these here
+screen -t emacs 0
+screen -t run 1
+screen -t bash 2
