@@ -108,7 +108,7 @@
 
    ;; search
    `(isearch ((t (:background, *visual-background* :foreground, *visual-selection*))))
-   `(isearch-fail ((t (:background, *warning*))))
+   `(isearch-fail ((t (:background, *visual-background*))))
    `(lazy-highlight ((t (:background, *visual-highlight* :foreground, *visual-selection*))))
 
    ))
