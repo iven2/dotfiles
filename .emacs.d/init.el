@@ -62,5 +62,5 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; End of my key map setting ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
+;; do not use tab for intentation
+(setq-default indent-tabs-mode nil)
