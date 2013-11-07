@@ -62,5 +62,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; End of my key map setting ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; do not use tab for intentation
+;; do not use tab for intentation, it may screw up some display in some text editor
 (setq-default indent-tabs-mode nil)
+
+;; display column numbers too
+(setq column-number-mode t)
