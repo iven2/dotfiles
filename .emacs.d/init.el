@@ -67,3 +67,7 @@
 
 ;; display column numbers too
 (setq column-number-mode t)
+
+;; delete all training white spaces before any save
+;; sorce http://www.emacswiki.org/emacs/DeletingWhitespace
+ (add-hook 'before-save-hook 'delete-trailing-whitespace)
