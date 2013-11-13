@@ -63,3 +63,6 @@ export BYOBU_PREFIX=${HOME}/.byobu
 
 # create shortcut to go to my sandbox
 alias g='gnome-open'
+
+# set python class path for my python library for my master's studies
+PYTHONPATH="${HOME}/xcui_sandbox/pmaster:PYTHONPATH"

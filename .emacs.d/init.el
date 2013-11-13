@@ -71,7 +71,3 @@
 ;; delete all training white spaces before any save
 ;; sorce http://www.emacswiki.org/emacs/DeletingWhitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
-;; Turn on auto indentation
-(define-key global-map (kbd "RET") 'newline-and-indent)
