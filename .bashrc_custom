@@ -11,9 +11,9 @@ alias shoshin_vpn='cd ~/School/shoshin_vpn/shoshin-vpn/; sudo openvpn ./shoshin.
 # http://www.gentoo.org/doc/en/articles/prompt-magic.xml
 HOSTNAME_HASH=$(md5sum <<< `hostname`)
 HOSTNAME_COLOR=$((0x${HOSTNAME_HASH%% *}))
-HOSTNAME_COLOR=$((HOSTNAME_COLOR % 8))
+HOSTNAME_COLOR=$((HOSTNAME_COLOR % 667 % 8))
 HOSTNAME_COLOR=$((HOSTNAME_COLOR + 30))
-PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR};1m\]\h:\[\033[0;37;1m\]\w]\\$\[\033[0m\]"
+PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\\$\[\033[0m\]"
 #PS1="$ \[\033[0m\]"
 
 # enable color support of ls and also add handy aliases
