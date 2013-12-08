@@ -13,7 +13,13 @@ HOSTNAME_HASH=$(md5sum <<< `hostname`)
 HOSTNAME_COLOR=$((0x${HOSTNAME_HASH%% *}))
 HOSTNAME_COLOR=$((HOSTNAME_COLOR % 667 % 8))
 HOSTNAME_COLOR=$((HOSTNAME_COLOR + 30))
-PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\\$\[\033[0m\]"
+
+if [ "`whoami`" = 'root' ]
+then
+        PS1="\[\033[31;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[31;1m\]\w]\\$\[\033[0m\]"
+else
+        PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\\$\[\033[0m\]"
+fi
 #PS1="$ \[\033[0m\]"
 
 # enable color support of ls and also add handy aliases
