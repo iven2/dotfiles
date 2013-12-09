@@ -1,0 +1,1 @@
+[ -r /home/xcui/.byobu/share/byobu/profiles/bashrc ] && . /home/xcui/.byobu/share/byobu/profiles/bashrc  #byobu-prompt#
