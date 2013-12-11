@@ -11,8 +11,11 @@ alias shoshin_vpn='cd ~/School/shoshin_vpn/shoshin-vpn/; sudo openvpn ./shoshin.
 # http://www.gentoo.org/doc/en/articles/prompt-magic.xml
 HOSTNAME_HASH=$(md5sum <<< `hostname`)
 HOSTNAME_COLOR=$((0x${HOSTNAME_HASH%% *}))
-HOSTNAME_COLOR=$((HOSTNAME_COLOR % 667 % 8))
-HOSTNAME_COLOR=$((HOSTNAME_COLOR + 30))
+if [ $HOSTNAME_COLOR -lt 0 ]; then
+    HOSTNAME_COLOR=$((0 - $HOSTNAME_COLOR))
+fi
+HOSTNAME_COLOR=$((HOSTNAME_COLOR % 691 % 7))
+HOSTNAME_COLOR=$((HOSTNAME_COLOR + 31))
 
 if [ "`whoami`" = 'root' ]
 then
