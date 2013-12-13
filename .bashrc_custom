@@ -74,7 +74,8 @@ diffdir(){
 }
 
 # export byobu directory so byobu will read my configurations
-export BYOBU_PREFIX=${HOME}/.byobu
+export BYOBU_PREFIX=${HOME}/dotfiles/.byobu/SRC_GIT/byobu/usr
+export PATH=${HOME}/dotfiles/.byobu/SRC_GIT/byobu/usr/bin/:"$PATH"
 
 # create shortcut to go to my sandbox
 alias g='gnome-open'

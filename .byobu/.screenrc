@@ -1,0 +1,2 @@
+# xcui setting(important):makes sure byobu source my screenrc
+source ${HOME}/.screenrc
