@@ -77,8 +77,19 @@ diffdir(){
 export BYOBU_PREFIX=${HOME}/dotfiles/.byobu/SRC_GIT/byobu/usr
 export PATH=${HOME}/dotfiles/.byobu/SRC_GIT/byobu/usr/bin/:"$PATH"
 
-# create shortcut to go to my sandbox
-alias g='gnome-open'
+# create shortcut to open files in with x11
+# also this only works after you installed ubuntu-desktop
+# i.e. sudo apt-get update; sudo apt-get upgrade; sudo apt-get install ubuntu-desktop
+# to disable GUI from starting during boot, add "text" after "GRUB_CMDLINE_LINUX_DEFAULT=" in /etc/default/grub
+# gvfs-open replaced gnome-open after ubuntu 12.04
+# source http://askubuntu.com/questions/101965/what-is-the-replacement-for-gnome-open-in-gnome
+alias g='gvfs-open'
+# This line is used to get rid of the warning message when I use x11
+# source http://askubuntu.com/questions/227515/terminal-warning-when-opening-a-file-in-gedit
+export NO_AT_BRIDGE=1
 
 # set python class path for my python library for my master's studies
 export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:PYTHONPATH"
+
+### Added by the Heroku Toolbelt because of startup engineering class from courera
+export PATH="/usr/local/heroku/bin:$PATH"
