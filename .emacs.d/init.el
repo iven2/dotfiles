@@ -71,3 +71,8 @@
 ;; delete all training white spaces before any save
 ;; sorce http://www.emacswiki.org/emacs/DeletingWhitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;;; rhtml mode for ruby on rails
+;;; rhtml is a html syntax highlighting tool for ruby on rails
+(add-to-list 'load-path "~/dotfiles/.emacs.d/plugins/rhtml")
+(require 'rhtml-mode)
