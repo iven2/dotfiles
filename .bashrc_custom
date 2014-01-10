@@ -1,5 +1,7 @@
 # Xu Cui's customized .bashrc_cutom file
 
+source ${HOME}/dotfiles/.bashrc_vm_specific
+
 # emacs shortcut
 alias e='emacs -nw'
 
@@ -93,3 +95,9 @@ export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:PYTHONPATH"
 
 ### Added by the Heroku Toolbelt because of startup engineering class from courera
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# clean up duplicates in PATH varabile
+# Note duplicate is only introduced when running byobu and I couldn't figure out why
+# source of this solution:
+# http://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem
+PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
