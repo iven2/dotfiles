@@ -102,3 +102,13 @@
               ((= indent prev-indent)
                (indent-line-to arg-indent)))
         (when (> offset 0) (forward-char offset))))))
+
+;;;;;;;;;;;;; adding the php mode
+;; source:
+;; http://php-mode.sourceforge.net/php-mode.pdf
+;; adding load path
+(add-to-list 'load-path "~/dotfiles/.emacs.d/modes")
+(load '"php-mode")
+(add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
+;;;;;;;; End of adding php mode

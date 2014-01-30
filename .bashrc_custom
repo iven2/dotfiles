@@ -1,6 +1,5 @@
 # Xu Cui's customized .bashrc_cutom file
 
-
 source ${HOME}/dotfiles/.bashrc_vm_specific
 
 # emacs shortcut
