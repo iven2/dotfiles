@@ -112,3 +112,14 @@
 (add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
 ;;;;;;;; End of adding php mode
+
+;;;;;;;;;;;; auto break long lines
+;; source:
+;; https://github.com/xiaohanyu/oh-my-emacs/blob/master/core/ome-basic.org
+;; http://superuser.com/questions/474373/how-to-automatically-wrap-long-lines-in-emacs
+(setq-default fill-column 80)
+;; for text text-mode only
+;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
+;; for globally, all modes
+(setq-default auto-fill-function 'do-auto-fill)
+;;;;;;;;;;;; end of auto break long lines
