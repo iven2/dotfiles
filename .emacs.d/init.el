@@ -37,8 +37,6 @@
 ;; bind control-c control-c to comment:)
 (global-set-key "\C-c\C-c" 'comment-or-uncomment-region-or-line)
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; My key map setting ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; I needed these settings so C major mode's control-c control-c will not be in conflict with my comment definition
 ;; I do not understand the reason bedhine these and maybe I should learn about this soon
@@ -123,3 +121,13 @@
 ;; for globally, all modes
 (setq-default auto-fill-function 'do-auto-fill)
 ;;;;;;;;;;;; end of auto break long lines
+
+;;;;;;;;;;;;;;; adding closure mode
+;; source
+;; https://github.com/clojure-emacs/clojure-mode
+;; load path is already added by php
+(load "clojure-mode")
+;; omitted the test mode because there is a missing el file , check this out
+;; later
+;; (load "cloure-mode-test")
+;;;;;;;;;;;;;;; end of closure mode
