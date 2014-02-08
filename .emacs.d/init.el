@@ -115,7 +115,7 @@
 ;; source:
 ;; https://github.com/xiaohanyu/oh-my-emacs/blob/master/core/ome-basic.org
 ;; http://superuser.com/questions/474373/how-to-automatically-wrap-long-lines-in-emacs
-(setq-default fill-column 80)
+(setq-default fill-column 79)
 ;; for text text-mode only
 ;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 ;; for globally, all modes
