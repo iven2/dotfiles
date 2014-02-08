@@ -1,6 +1,8 @@
 # Xu Cui's customized .bashrc_cutom file
-
-source ${HOME}/dotfiles/.bashrc_vm_specific
+if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
+then
+   source ${HOME}/dotfiles/.bashrc_vm_specific
+fi
 
 # emacs shortcut
 alias e='emacs -nw'
