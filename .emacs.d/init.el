@@ -141,5 +141,9 @@
 (setq fci-rule-width 1)
 ;; (setq fci-rule-color "darkblue")
 (setq fci-rule-color "#1E90FF")
+;; in emacs 24 or later
+;; we can use 'prog-mode-hook to turn on a minor mode in all programming mode
+;; source:
+;; http://stackoverflow.com/questions/12763566/permanently-enabling-the-hs-minor-mode-in-emacs
 (add-hook 'prog-mode-hook #'fci-mode)
 ;;;;;;;;;;;; end of fill-column indicator
