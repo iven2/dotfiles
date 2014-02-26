@@ -131,3 +131,15 @@
 ;; later
 ;; (load "cloure-mode-test")
 ;;;;;;;;;;;;;;; end of closure mode
+
+;;;;;;;;;;;; fill-column indicator
+;; source:
+;; http://www.emacswiki.org/FillColumnIndicator#toc1
+;; source name: FillColumnIndicator
+(add-to-list 'load-path "~/.emacs.d/plugins/")
+(require 'fill-column-indicator)
+(setq fci-rule-width 1)
+;; (setq fci-rule-color "darkblue")
+(setq fci-rule-color "#1E90FF")
+(add-hook 'prog-mode-hook #'fci-mode)
+;;;;;;;;;;;; end of fill-column indicator
