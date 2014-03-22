@@ -74,7 +74,8 @@
 ;;; rhtml is a html syntax highlighting tool for ruby on rails
 (add-to-list 'load-path "~/dotfiles/.emacs.d/plugins/rhtml")
 (require 'rhtml-mode)
-
+;; make sure we enable rhtml-mode when the file name ends with erb
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 
 ;; added to fix ruby indentation problem after type the newline
 ;; source:
