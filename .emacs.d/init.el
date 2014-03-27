@@ -38,7 +38,8 @@
 (global-set-key "\C-c\C-c" 'comment-or-uncomment-region-or-line)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; My key map setting ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; I needed these settings so C major mode's control-c control-c will not be in conflict with my comment definition
+;; I needed these settings so C major mode's control-c control-c will not be in
+;; conflict with my comment definition
 ;; I do not understand the reason bedhine these and maybe I should learn about this soon
 ;; Source: http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/5340797#5340797
 ;; Secondary Source:
@@ -144,7 +145,28 @@
 (setq fci-rule-color "#1E90FF")
 ;; in emacs 24 or later
 ;; we can use 'prog-mode-hook to turn on a minor mode in all programming mode
+;; (add-hook 'prog-mode-hook #'fci-mode)
 ;; source:
 ;; http://stackoverflow.com/questions/12763566/permanently-enabling-the-hs-minor-mode-in-emacs
-(add-hook 'prog-mode-hook #'fci-mode)
+
+;; but since this is in conflict with web mode, disable for now and added list
+;; of major mode hooks to add this minor mode manually
+(add-hook 'text-mode-hook 'fci-mode)
+(add-hook 'emacs-lisp-mode-hook 'fci-mode)
+;; (add-to-list 'auto-mode-alist '("\\.el\\'" . fci-mode))
 ;;;;;;;;;;;; end of fill-column indicator
+
+;;;;;;;;;;;;; web mode used for javascript embedded in html ;;;;;;;;;
+;; Note that web mode is in conflict with fci-mode
+;; I should findo ut why sometimes
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+;;;;;;;;;;;;; End of web mode ;;;;;;;;;;;;;;;;;;;;;;;;;;
