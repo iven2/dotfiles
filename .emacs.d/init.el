@@ -121,7 +121,9 @@
 ;; for text text-mode only
 ;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 ;; for globally, all modes
-(setq-default auto-fill-function 'do-auto-fill)
+;; 2014 April 24th update: disable auto-column fill for now since it is
+;; annoying sometimes
+;; (setq-default auto-fill-function 'do-auto-fill)
 ;;;;;;;;;;;; end of auto break long lines
 
 ;;;;;;;;;;;;;;; adding closure mode
