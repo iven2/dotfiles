@@ -76,6 +76,9 @@ escape `e
 defscrollback 30000
 
 # bind Control+shift+tab as focus up
+# May 4 2014 Update: This only works in Screen version 4.00.03jw4 (FAU) 2-May-06
+# For Screen version 4.01.00devel (GNU) 2-May-06, use "focus prev" instead of "focus up"
+# details are saved in evernote under byobu
 bindkey "^[[Z" focus up
 
 autodetach             on             # default: on
