@@ -16,9 +16,9 @@ termcapinfo xterm* ti@:te@
 
 # ***) Description of the keywords used in hardstatus
 # caption always "%?%F%{-b bc}%:%{-b bb}%?%C|%D|%M %d|%H%?%F%{+u wb}%? %L=%-Lw%45>%{+b by}%n%f* %t%{-}%+Lw%-0<"
-# 
+#
 # Anything I don't describe is treated literally.
-# 
+#
 # %?          - Start of a conditional statement.
 #  %F         - Use this part of the statement if the window has focus (i.e. it
 #               is the only window or the currently active one).
@@ -56,7 +56,7 @@ termcapinfo xterm* ti@:te@
 #               from the right margin (-).
 
 #change the hardstatus settings to give an window list at the bottom of the
-##screen, with the time and date and with the current window highlighted                  
+##screen, with the time and date and with the current window highlighted
 hardstatus             alwayslastline
 # The following hardstatus is useless, and just kept here for future reference
 #hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
@@ -76,7 +76,7 @@ escape `e
 defscrollback 30000
 
 # bind Control+shift+tab as focus up
-bindkey "^[[Z" focus up 
+bindkey "^[[Z" focus up
 
 autodetach             on             # default: on
 defutf8 	       on             # unicode by default
