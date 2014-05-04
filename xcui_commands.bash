@@ -20,3 +20,11 @@ countdown(){
     done
     echo "current time is" $(date)
 }
+
+
+# this function is only needed for ubuntu 14.xx because of gnu screen update
+# this is used for Screen version 4.01.00devel (GNU) 2-May-06
+# for now, this is only need for digital ocean server
+set_screen_focus_binding(){
+    screen -X bindkey '^[[Z' focus prev
+}
