@@ -174,3 +174,12 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (setq web-mode-markup-indent-offset 2)
 ;;;;;;;;;;;;; End of web mode ;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;; Jade mode for nodejs/express applications ;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+;;;;;;;;;;;;;; END of Jade mode for nodejs/express applications ;;;;;;;;;
