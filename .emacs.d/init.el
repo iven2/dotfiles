@@ -183,3 +183,9 @@
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 ;;;;;;;;;;;;;; END of Jade mode for nodejs/express applications ;;;;;;;;;
+
+;;;;;;;;;;;; Smooth scrolling mode ;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/smooth-scrolling")
+(require 'smooth-scrolling)
+(setq smooth-scroll-margin 1)
+;;;;;;;;;;;; End of Smooth scrolling mode ;;;;;;;;;;;;;;
