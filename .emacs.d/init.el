@@ -189,3 +189,10 @@
 (require 'smooth-scrolling)
 (setq smooth-scroll-margin 1)
 ;;;;;;;;;;;; End of Smooth scrolling mode ;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;; enter scheme-mode while editing .rkt files ;;;;;;
+(setq auto-mode-alist
+      (cons '("\\.rkt$" . scheme-mode)
+            auto-mode-alist))
+;;;;;;;;;;;;;;;;;;;;;;;; End of entering scheme-mode for .rkt files ;;;;;;
