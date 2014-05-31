@@ -38,3 +38,5 @@ countdown(){
 set_screen_focus_binding(){
     screen -X bindkey '^[[Z' focus prev
 }
+
+alias op='cd ~/open-times/backend/opentimes'
