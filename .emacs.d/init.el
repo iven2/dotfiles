@@ -196,3 +196,12 @@
       (cons '("\\.rkt$" . scheme-mode)
             auto-mode-alist))
 ;;;;;;;;;;;;;;;;;;;;;;;; End of entering scheme-mode for .rkt files ;;;;;;
+
+;;;; newly added for js ;;;
+(add-to-list 'load-path "~/.emacs.d/modes/js")
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;;; end for js ;;;
+
+;;; auto indent after you hit enter
+(electric-indent-mode 1)
