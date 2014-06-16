@@ -197,11 +197,21 @@
             auto-mode-alist))
 ;;;;;;;;;;;;;;;;;;;;;;;; End of entering scheme-mode for .rkt files ;;;;;;
 
-;;;; newly added for js ;;;
+;;;;;;;;; Mode for js ;;;
+;; js2-mode is the best mode for javascript
 (add-to-list 'load-path "~/.emacs.d/modes/js")
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;;; end for js ;;;
+;;;;;;;;; end of the Mode for js ;;;
 
-;;; auto indent after you hit enter
+;;;;;;;; auto indent after you hit enter
 (electric-indent-mode 1)
+;;;;;;;; end of auto indent after you hit enter
+
+;;;;;;; Modification of C comment behaviour ;;;;;;;;;;
+;; by default if I wanted to comment a line in C
+;; it uses /* ... */
+;; the following line modifies it such the comment now uses //
+(add-hook 'c-mode-hook (lambda () (setq comment-start "//"
+                                        comment-end   "")))
+;;;;;;; End of Modification of C comment behaviour ;;;;;;;;;;
