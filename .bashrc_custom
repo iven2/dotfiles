@@ -1,8 +1,5 @@
 # Xu Cui's customized .bashrc_cutom file
-if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
-then
-   source ${HOME}/dotfiles/.bashrc_vm_specific
-fi
+
 
 # emacs shortcut
 alias e='emacs -nw'
@@ -105,3 +102,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
 source ${HOME}/dotfiles/xcui_commands.bash
+
+
+
+
+# source vm_specific file at the end so overwrite works
+if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
+then
+   source ${HOME}/dotfiles/.bashrc_vm_specific
+fi
