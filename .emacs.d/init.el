@@ -153,8 +153,12 @@
 
 ;; but since this is in conflict with web mode, disable for now and added list
 ;; of major mode hooks to add this minor mode manually
-(add-hook 'text-mode-hook 'fci-mode)
-(add-hook 'emacs-lisp-mode-hook 'fci-mode)
+
+;; disabled all fci mode on July 11th 2014 because it causes emacs to seg fault
+;; (add-hook 'text-mode-hook 'fci-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'fci-mode)
+;; end of disable on July 11th 2014
+
 ;; (add-to-list 'auto-mode-alist '("\\.el\\'" . fci-mode))
 ;;;;;;;;;;;; end of fill-column indicator
 
