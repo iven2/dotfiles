@@ -219,3 +219,10 @@
 (add-hook 'c-mode-hook (lambda () (setq comment-start "//"
                                         comment-end   "")))
 ;;;;;;; End of Modification of C comment behaviour ;;;;;;;;;;
+
+;; Start of Testing as of July 15th 2014
+;;;; Emacs on Mac OS is deleting backwards, The following line can correct it ;;;;
+;;;; Surprisingly this will not emacs in my Linux boxes to mishave
+;;;; So I keep this here for testing purpose
+(normal-erase-is-backspace-mode 0)
+;; End of Testing as of July 15th 2014
