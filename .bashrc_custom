@@ -1,5 +1,13 @@
 # Xu Cui's customized .bashrc_cutom file
 
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'FreeBSD' ]]; then
+   platform='freebsd'
+fi
+
 
 # emacs shortcut
 alias e='emacs -nw'
@@ -27,7 +35,11 @@ fi
 #PS1="$ \[\033[0m\]"
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto'
+if [[ $platform == 'linux' ]]; then
+   alias ls='ls --color=auto'
+elif [[ $platform == 'freebsd' ]]; then
+   alias ls='ls -G'
+fi
 alias ll='ls -alFG'
 
 # history will ignore both duplicates and spaces; this also erases duplicated entries in history
@@ -103,11 +115,11 @@ PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS;
 
 source ${HOME}/dotfiles/xcui_commands.bash
 
-
-
-
 # source vm_specific file at the end so overwrite works
 if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
 then
    source ${HOME}/dotfiles/.bashrc_vm_specific
 fi
+
+# enables xterm forwarding
+alias ssh='ssh -X'
