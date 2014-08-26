@@ -220,9 +220,9 @@
              (electric-indent-mode 0)) t)
 ;; the next 3 lines enables newline-and-indent mode in python
 ;; somehow I cannot combine these 6 lines.
-;; (add-hook 'python-mode-hook
-;;          '(lambda ()
-;;             (local-set-key (kbd "RET") 'newline-and-indent)) t)
+(add-hook 'python-mode-hook
+         '(lambda ()
+            (local-set-key (kbd "RET") 'newline-and-indent)) t)
 ;;;;;;;; end of auto indent after you hit enter
 
 ;;;;;;; Modification of C comment behaviour ;;;;;;;;;;
