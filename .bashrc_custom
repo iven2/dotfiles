@@ -28,9 +28,9 @@ HOSTNAME_COLOR=$((HOSTNAME_COLOR + 31))
 
 if [ "`whoami`" = 'root' ]
 then
-        PS1="\[\033[31;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[31;1m\]\w]\\$\[\033[0m\]"
+        PS1="\[\033[31;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[31;1m\]\w]\n\\$\[\033[0m\] "
 else
-        PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\\$\[\033[0m\]"
+        PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\n\\$\[\033[0m\] "
 fi
 #PS1="$ \[\033[0m\]"
 
@@ -102,7 +102,7 @@ alias g='gvfs-open'
 export NO_AT_BRIDGE=1
 
 # set python class path for my python library for my master's studies
-export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:PYTHONPATH"
+export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:${PYTHONPATH}"
 
 ### Added by the Heroku Toolbelt because of startup engineering class from courera
 export PATH="/usr/local/heroku/bin:$PATH"
