@@ -226,3 +226,11 @@
 ;;;; So I keep this here for testing purpose
 (normal-erase-is-backspace-mode 0)
 ;; End of Testing as of July 15th 2014
+
+
+;; a place to set custom variables for emacs
+;; apparently, I can use this to set variable to different values to modify
+;; the behaviour of custom modes(language modes);
+(custom-set-variables
+ ;; Disabling strict-inconsistent-return warning for js2 mode(javascript mode)
+ '(js2-strict-inconsistent-return-warning nil))
