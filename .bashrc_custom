@@ -1,5 +1,13 @@
 # Xu Cui's customized .bashrc_cutom file
 
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'FreeBSD' ]]; then
+   platform='freebsd'
+fi
+
 
 # emacs shortcut
 alias e='emacs -nw'
@@ -20,14 +28,18 @@ HOSTNAME_COLOR=$((HOSTNAME_COLOR + 31))
 
 if [ "`whoami`" = 'root' ]
 then
-        PS1="\[\033[31;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[31;1m\]\w]\\$\[\033[0m\]"
+        PS1="\[\033[31;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[31;1m\]\w]\n\\$\[\033[0m\] "
 else
-        PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\\$\[\033[0m\]"
+        PS1="\[\033[0;37;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[0;37;1m\]\w]\n\\$\[\033[0m\] "
 fi
 #PS1="$ \[\033[0m\]"
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto'
+if [[ $platform == 'linux' ]]; then
+   alias ls='ls --color=auto'
+elif [[ $platform == 'freebsd' ]]; then
+   alias ls='ls -G'
+fi
 alias ll='ls -alFG'
 
 # history will ignore both duplicates and spaces; this also erases duplicated entries in history
@@ -90,7 +102,7 @@ alias g='gvfs-open'
 export NO_AT_BRIDGE=1
 
 # set python class path for my python library for my master's studies
-export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:PYTHONPATH"
+export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:${PYTHONPATH}"
 
 ### Added by the Heroku Toolbelt because of startup engineering class from courera
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -103,11 +115,11 @@ PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS;
 
 source ${HOME}/dotfiles/xcui_commands.bash
 
-
-
-
 # source vm_specific file at the end so overwrite works
 if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
 then
    source ${HOME}/dotfiles/.bashrc_vm_specific
 fi
+
+# enables xterm forwarding
+alias ssh='ssh -X'

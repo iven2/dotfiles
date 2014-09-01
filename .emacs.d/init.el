@@ -209,7 +209,20 @@
 ;;;;;;;;; end of the Mode for js ;;;
 
 ;;;;;;;; auto indent after you hit enter
+;;; Indentation for python
 (electric-indent-mode 1)
+;; Ignoring electric indentation in python mode
+;; because elctric-indent-mode doesn't work well with emacs 24.3
+;; my search result told me that I could remove this in upcoming emacs 24.4
+;; next 3 lines disable electric mode in python
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (electric-indent-mode 0)) t)
+;; the next 3 lines enables newline-and-indent mode in python
+;; somehow I cannot combine these 6 lines.
+;; (add-hook 'python-mode-hook
+;;          '(lambda ()
+;;             (local-set-key (kbd "RET") 'newline-and-indent)) t)
 ;;;;;;;; end of auto indent after you hit enter
 
 ;;;;;;; Modification of C comment behaviour ;;;;;;;;;;
