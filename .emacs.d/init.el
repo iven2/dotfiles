@@ -247,3 +247,7 @@
 (custom-set-variables
  ;; Disabling strict-inconsistent-return warning for js2 mode(javascript mode)
  '(js2-strict-inconsistent-return-warning nil))
+
+
+;; TO avoid .# files that is created by emacs:
+(setq create-lockfiles nil)
