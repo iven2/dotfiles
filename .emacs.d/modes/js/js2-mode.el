@@ -9592,7 +9592,10 @@ And, if CHECK-ACTIVATION-P is non-nil, use the value of TOKEN."
 followed by an opening brace.")
 
 (defconst js2-indent-operator-re
-  (concat "[-+*/%<>=&^|?:.]\\([^-+*/]\\|$\\)\\|"
+  ;; Removed the dot we I do not indent leading dots
+  ;; The next line is the original indentation
+  ;; (concat "[-+*/%<>=&^|?:.]\\([^-+*/]\\|$\\)\\|"
+  (concat "[-+*/%<>=&^|?:]\\([^-+*/]\\|$\\)\\|"
           (regexp-opt '("in" "instanceof") 'words))
   "Regular expression matching operators that affect indentation
 of continued expressions.")
