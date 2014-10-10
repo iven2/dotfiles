@@ -289,3 +289,9 @@
 ;;;;; kill current buffer without any confirmation
 (global-set-key [(control x) (k)] 'kill-this-buffer)
 ;;;;; End of kill current buffer without any confirmation
+
+;;;; scss mode ;;;;;
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/modes/"))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(setq scss-compile-at-save nil)
