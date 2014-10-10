@@ -283,3 +283,9 @@
 
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(require 'buffer-stack)
+
+;;;;; kill current buffer without any confirmation
+(global-set-key [(control x) (k)] 'kill-this-buffer)
+;;;;; End of kill current buffer without any confirmation
