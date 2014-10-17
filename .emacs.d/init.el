@@ -67,9 +67,28 @@
 ;; display column numbers too
 (setq column-number-mode t)
 
-;; delete all training white spaces before any save
+;;;;;;;;;;;;;;;;; Start of Trailing white space code
+;; delete all trailing white spaces before any save
 ;; sorce http://www.emacswiki.org/emacs/DeletingWhitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;;;;;;;;;;;;;;;;; Sometimes I do not want to remove trailing whitespace
+;;;;;;;;;;;;;;;;; i.e. for md file
+;;;;;;;;;;;;;;;;; The following code will be C-c C-s to save without removeing trailing space
+;;;;;;;;;;;;;;;; Source:
+;;;;;;;;;;;;;;;; http://stackoverflow.com/questions/14913398/in-emacs-how-do-i-save-without-running-save-hooks
+;; save the buffer, removing and readding the 'delete-trailing-whitespace function
+;; to 'before-save-hook if it's there
+(defun save-buffer-no-delete-trailing-whitespace ()
+  (interactive)
+  (let ((normally-should-delete-trailing-whitespace (memq 'delete-trailing-whitespace before-save-hook)))
+    (when normally-should-delete-trailing-whitespace
+      (remove-hook 'before-save-hook 'delete-trailing-whitespace))
+    (save-buffer)
+    (when normally-should-delete-trailing-whitespace
+      (add-hook 'before-save-hook 'delete-trailing-whitespace))))
+(global-set-key (kbd "C-c C-s") 'save-buffer-no-delete-trailing-whitespace)
+;;;;;;;;;;;;;;;;; End of Trailing white space code
 
 ;;; rhtml mode for ruby on rails
 ;;; rhtml is a html syntax highlighting tool for ruby on rails
