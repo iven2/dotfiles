@@ -5,6 +5,8 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 ;; don't indent namespace
 (c-set-offset 'innamespace 0)
+;; set c or c++ indentation to 4 whitespaces instead of 2(default value)
+(setq-default c-basic-offset 4)
 
 ;; ido mode... should read about this
 (require 'ido)
