@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- == *i* ]] || return
+
 # Adopted from Dr. Balaji S. Srinivasan's Startup Engineering class on coursera
 
 # .bashrc file
