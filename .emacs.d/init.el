@@ -224,6 +224,10 @@
 
 ;;;;;;;;; Mode for js ;;;
 ;; js2-mode is the best mode for javascript
+(custom-set-variables
+ ;; set javascript js2 indentation to 2 instead of default's 4
+ '(js2-basic-offset 2)
+ )
 (add-to-list 'load-path "~/.emacs.d/modes/js")
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
