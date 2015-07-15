@@ -123,3 +123,12 @@ fi
 
 # enables xterm forwarding
 alias ssh='ssh -X'
+
+# lt takes a file name and list all files with that name in the current directory sorted by creation time
+llt(){
+   if [ $# -ne 1 ]
+   then
+        echo "Usage: lt file_name"; return 66;
+   fi
+   find . -name ${1} -type f -printf '%T@ %p\n' | sort -k1 -n | awk '{print $2}'
+}
