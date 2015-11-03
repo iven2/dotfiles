@@ -26,6 +26,12 @@ fi
 HOSTNAME_COLOR=$((HOSTNAME_COLOR % 691 % 7))
 HOSTNAME_COLOR=$((HOSTNAME_COLOR + 31))
 
+# replace blue with light magenta because blue is too dark for my taste
+# color codes can be found at http://misc.flogisoft.com/bash/tip_colors_and_formatting
+if [ "$HOSTNAME_COLOR" = "34" ]; then
+   HOSTNAME_COLOR="95"
+fi
+
 if [ "`whoami`" = 'root' ]
 then
         PS1="\[\033[31;1m\][\u@\[\033[0;${HOSTNAME_COLOR}m\]\h:\[\033[31;1m\]\w]\n\\$\[\033[0m\] "
