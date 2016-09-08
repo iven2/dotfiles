@@ -108,7 +108,8 @@ alias g='gvfs-open'
 export NO_AT_BRIDGE=1
 
 # set python class path for my python library for my master's studies
-export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:${PYTHONPATH}"
+# Update September 2016, I no longer want to own libraries to mess with my current scripts
+# export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:${PYTHONPATH}"
 
 ### Added by the Heroku Toolbelt because of startup engineering class from courera
 export PATH="/usr/local/heroku/bin:$PATH"
