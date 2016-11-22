@@ -40,3 +40,6 @@ set_screen_focus_binding(){
 }
 
 alias op='cd ~/open-times/backend/opentimes'
+
+# adding diffc to PATH so we can execute diffc
+PATH=$PATH:~/dotfiles/diffc-read-only/bin/python2/
