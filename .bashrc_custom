@@ -139,3 +139,29 @@ llt(){
    fi
    find . -name ${1} -type f -printf '%T@ %p\n' | sort -k1 -n | awk '{print $2}'
 }
+
+
+# ---------- change osx terminal tab names for MacOS only
+function tabname {
+  printf "\e]1;$1\a"
+}
+
+function winname {
+  printf "\e]2;$1\a"
+}
+
+function tn {
+    if [ $# -ne 1 ]; then
+        echo "usage: tn enter_tab_name"
+        return
+    fi
+    {
+        while true
+        do
+            winname ""
+            tabname $1
+            sleep 5
+        done
+    } &
+}
+# ------------ end of change osx terminal tab names for MacOS only
