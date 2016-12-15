@@ -165,3 +165,7 @@ function tn {
     } &
 }
 # ------------ end of change osx terminal tab names for MacOS only
+
+## this is used to fix GREP_OPTIONS is depreated warning in ubuntu 16+
+alias grep="grep $GREP_OPTIONS"
+unset GREP_OPTIONS
