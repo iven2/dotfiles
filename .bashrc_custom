@@ -169,3 +169,6 @@ function tn {
 ## this is used to fix GREP_OPTIONS is depreated warning in ubuntu 16+
 alias grep="grep $GREP_OPTIONS"
 unset GREP_OPTIONS
+
+## use c++11 by default
+alias g++="g++ -std=c++11"
