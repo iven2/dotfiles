@@ -92,6 +92,31 @@ diffdir(){
 	diff --brief -bur ${1} ${2}
 }
 
+tarx() {
+       if [ $# -ne 1 ]
+       then
+                echo "Usage: tarx  dir_to_compress"
+                return 16666
+       fi
+       dir=$(echo $1| sed 's:/*$::')
+  # Create a compress tar file (archive) of the directory "dir"
+  # -c is create, -z is compress, -f is the filename (dir.tgz) stands for gzipped tar file
+  # tar -czf dir.tgz dir
+       tar -czf ${dir}.tgz ${dir}
+       echo "compression is completed, the result file is ${dir}.tgz"
+}
+untarx() {
+       if [ $# -ne 1 ]
+       then
+                echo "Usage: untarx  dir_to_decompress"
+                return 16666
+       fi
+  # Extract the contents (creates the directory dir and
+  # populates it with everything in the original directory)
+  # tar -xzf dir.tgz
+       tar -xzf ${1}
+}
+
 # export byobu directory so byobu will read my configurations
 export BYOBU_PREFIX=${HOME}/dotfiles/.byobu/SRC_GIT/byobu/usr
 export PATH=${HOME}/dotfiles/.byobu/SRC_GIT/byobu/usr/bin/:"$PATH"
@@ -172,3 +197,5 @@ unset GREP_OPTIONS
 
 ## use c++11 by default
 alias g++="g++ -std=c++11"
+
+alias ps="ps -eo pid,lstart,cmd"
