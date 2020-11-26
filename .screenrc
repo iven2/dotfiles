@@ -81,14 +81,24 @@ defscrollback 30000
 # details are saved in evernote under byobu
 bindkey "^[[Z" focus up
 
-autodetach             on             # default: on
-defutf8 	       on             # unicode by default
+# autodetach             on             # default: on
+# defutf8 	       on             # unicode by default
 activity	       "activity in %n (%t) [%w:%s]~"
 
 # Autoload three screen tabs.
 # tried to put "this" tab configure in .byobu/windows
 # but somehow if this is put there, it corrupts the emacs configuration for line number color
 # so have to keep these here
-screen -t emacs 0
-screen -t run 1
-screen -t bash 2
+screen -t watch_xxx
+# screen -t run 1
+# screen -t bash 2
+
+# may 18 2020 update
+autodetach on
+startup_message off
+hardstatus alwayslastline
+#hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{=b W}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+
+
+# hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{R}Load: %l %{g}][%{B}%D %d-%    M-%Y %{W}%C:%s %A %{g}]'
