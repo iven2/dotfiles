@@ -17,18 +17,16 @@
 ;;
 ;; ----------------------------
 
-(unless (>= 24 emacs-major-version)  (error "requires Emacs 24 or later."))
+(unless (>= emacs-major-version 24)
+  (error "requires Emacs 24 or later."))
 
 (deftheme spolsky  "A dark color theme for Emacs based on Sublime Text 2")
 
-;; xcui Modification to %3i
 (custom-theme-set-variables
-  'spolsky
-  '(linum-format "%3i"))
+ 'spolsky
+ '(linum-format " %3i "))
 
-(let (
-      (*background*         "black")
-;;      (*background*         "#1D2021")
+(let ((*background*         "#161A1F")
       (*comments*           "#8C8C8C")
       (*constant*           "#FF80F4")
       (*current-line*       "#151515")
@@ -45,31 +43,27 @@
       (*mode-inactive-bg*   "#222")
       (*mode-line-fg*       "#EEDC82")
       (*mode-inactive-fg*   "#555")
-      (*normal*             "#00FF00")
-      ;; (*normal*             "#DEDEDE")
+      (*normal*             "#DEDEDE")
       (*number*             "#FC580C")
       (*operators*          "#FF80F4")
       (*warning*            "#FF6C60")
       (*regexp*             "#A63A62")
       (*string*             "#EEDC82")
       (*variable*           "#FD971F")
-      (*visual-background*  "#DC143C")
-      (*visual-highlight*   "#7171C6")
-      (*visual-selection*   "#FFFAFA"))
-      ;; (*visual-selection*   "#555"))
+      (*visual-selection*   "#555"))
 
   (custom-theme-set-faces
    'spolsky
 
    `(bold ((t (:bold t))))
    `(button ((t (:foreground, *keywords* :underline t))))
-   `(default ((t (:background, *background* :foreground, *normal*))))
+;;   `(default ((t (:background, *background* :foreground, *normal*))))
    `(header-line ((t (:background, *mode-line-bg* :foreground, *normal*)))) ;; info header
    `(highlight ((t (:background, *current-line*))))
    `(highlight-face ((t (:background, *current-line*))))
    `(hl-line ((t (:background, *current-line* :underline t))))
    `(info-xref ((t (:foreground, *keywords* :underline t))))
-   `(region ((t (:background, *visual-selection*))))
+;;   `(region ((t (:background, *visual-selection*))))
    `(underline ((nil (:underline t))))
 
    ;; font-lock
@@ -100,16 +94,16 @@
    `(mode-line-inactive ((t (:background, *mode-inactive-bg* :foreground, *mode-inactive-fg*))))
    `(cursor ((t (:background, *cursor-underscore*))))
    `(text-cursor ((t (:background, *cursor-underscore*))))
-   `(vertical-border ((t (:foreground, *background*)))) ;; between splits
+   `(vertical-border ((t (:background, *background*)))) ;; between splits
 
    ;; show-paren
    `(show-paren-mismatch ((t (:background, *warning* :foreground, *normal* :weight bold))))
    `(show-paren-match ((t (:background, *keywords* :foreground, *normal* :weight bold))))
 
    ;; search
-   `(isearch ((t (:background, *visual-background* :foreground, *visual-selection*))))
-   `(isearch-fail ((t (:background, *visual-background*))))
-   `(lazy-highlight ((t (:background, *visual-highlight* :foreground, *visual-selection*))))
+   `(isearch ((t (:background, *regexp* :foreground, *visual-selection*))))
+   `(isearch-fail ((t (:background, *warning*))))
+   `(lazy-highlight ((t (:background, *operators* :foreground, *visual-selection*))))
 
    ))
 
@@ -123,5 +117,3 @@
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
-
-
