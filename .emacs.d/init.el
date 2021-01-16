@@ -323,3 +323,29 @@
 
 ;;;;; less mode ;;;;; (the source file is @ ./modes/less-css-mode.el
 (require 'less-css-mode)
+
+
+
+;;;;;;; 2021 Updates
+;;; better reactjs support with rjsx-mode
+(add-to-list 'load-path "~/.emacs.d/2021_new/")
+(require 'rjsx-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
+(setq js2-mode-markup-indent-offset 2)
+(setq web-mode-markup-indent-offset 2)
+(setq rjsx-basic-offset 2)
+(setq sgml-basic-offset 2)
+(custom-set-variables
+ '(sgml-basic-offset 2)
+ )
+;;; end of better reactjs support with rjsx-mode
+;;;;; for rjsx the next set worked! source: https://github.com/felipeochoa/rjsx-mode
+(custom-set-variables
+ '(js-indent-level  2)
+ )
+(setq js2-basic-offset 2)
+
+;;; set css mode indentation to 2
+(setq css-indent-offset 2)
+;;; set default emacs language to utf-8
+(set-language-environment "UTF-8")
