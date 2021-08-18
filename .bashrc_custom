@@ -199,3 +199,21 @@ unset GREP_OPTIONS
 alias g++="g++ -std=c++11"
 
 alias ps="ps -eo pid,lstart,cmd"
+
+alias curl='curl --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"'
+
+## limited grep that limites # of character outputs
+function lgrep () {
+   if [ $# -ne 2 ]
+   then
+        echo "Usage: lgrep patter path"; return 66;
+   fi
+    grep -ri -o ".\{0,50\}${1}.\{0,190\}" ${2}
+}
+
+alias n="node"
+
+alias less="less -R"
+alias pstree="pstree -hp -s"
+alias lsd="find  . -maxdepth 1 ! -path . -type d -exec du -sh '{}' \;"
+alias lsf="find . -maxdepth 1 -not -type d -exec du -sh '{}' \;"
