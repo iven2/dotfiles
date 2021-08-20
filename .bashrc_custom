@@ -219,7 +219,11 @@ alias diffy="diff --width=$COLUMNS --suppress-common-lines --side-by-side --colo
 lastlog | grep -v Never | grep -v "Username\s*Port\s*From\s*Latest" | awk '{ print $1 "\t" $3 "\t" $4 " " $5 " " $6 " " $9 }' >> ~/1_jiayou__login_data.txt
 ## removing duplicates
 ## source: https://unix.stackexchange.com/questions/584768/delete-duplicate-lines-in-file-without-creating-new-file-in-ubuntu
-awk -i inplace '!seen[$0]++' ~/1_jiayou__login_data.txt
+## awk -i inplace '!seen[$0]++' ~/1_jiayou__login_data.txt ### this only works with awk version 4.1 or above
+## for old version of awk, the following performs same opertaions
+temp_file=$(mktemp)
+awk '!seen[$0]++' ~/1_jiayou__login_data.txt > $temp_file
+mv -f $temp_file ~/1_jiayou__login_data.txt
 ### -------- end of log login events and ips
 
 
