@@ -222,8 +222,11 @@ lastlog | grep -v Never | grep -v "Username\s*Port\s*From\s*Latest" | awk '{ pri
 ## awk -i inplace '!seen[$0]++' ~/1_jiayou__login_data.txt ### this only works with awk version 4.1 or above
 ## for old version of awk, the following performs same opertaions
 temp_file=$(mktemp)
-awk '!seen[$0]++' ~/1_jiayou__login_data.txt > $temp_file
-mv -f $temp_file ~/1_jiayou__login_data.txt
+new_data=$(awk '!seen[$0]++' ~/1_jiayou__login_data.txt)
+if [[ $? -eq 0 ]]; then
+   echo "$new_data" > $temp_file
+   mv -f $temp_file ~/1_jiayou__login_data.txt
+fi
 ### -------- end of log login events and ips
 
 
