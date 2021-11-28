@@ -134,7 +134,7 @@ export NO_AT_BRIDGE=1
 
 # set python class path for my python library for my master's studies
 # Update September 2016, I no longer want to own libraries to mess with my current scripts
-# export PYTHONPATH="${HOME}/xcui_sandbox/pmaster:${PYTHONPATH}"
+# export PYTHONPATH="${HOME}/iven_sandbox/pmaster:${PYTHONPATH}"
 
 ### Added by the Heroku Toolbelt because of startup engineering class from courera
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -145,7 +145,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # http://unix.stackexchange.com/questions/14895/duplicate-entries-in-path-a-problem
 PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
-source ${HOME}/dotfiles/xcui_commands.bash
+source ${HOME}/dotfiles/iven_commands.sh
 
 # enables xterm forwarding
 alias ssh='ssh -X'
