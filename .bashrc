@@ -177,7 +177,7 @@ PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
-## XCUI MAYBE CHECK THIS OUT SOON
+## iven2 MAYBE CHECK THIS OUT SOON
 ##set -o noclobber
 
 # 2.2) Listing, directories, and motion
@@ -209,7 +209,7 @@ export GREP_COLOR='1;31' # green for matches
 # 2.5) sort options
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-## XCUI if next two lines are not commented out, Chinese Characters can not be displayed correctly on terminal
+## iven2 if next two lines are not commented out, Chinese Characters can not be displayed correctly on terminal
 #unset LANG
 #export LC_ALL=POSIX
 
