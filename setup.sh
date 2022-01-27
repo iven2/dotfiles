@@ -15,13 +15,13 @@ create_sym_link() {
     # -L is testing symbolic link existence
     # see "man test" for detail
     if  test -f ${1}  ; then
-	echo ${1}
-	mv ${1} dotfiles.old/.
+        echo ${1} : mv ${1} dotfiles.old/.
+        mv ${1} dotfiles.old/.
     fi
 
     if  test -d ${1}  ; then
-	echo ${1}
-	mv ${1} dotfiles.old/.
+        echo ${1} : mv ${1} dotfiles.old/.
+        mv ${1} dotfiles.old/.
     fi
 
     ln -s ${new_dir}/${1} .
