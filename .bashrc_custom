@@ -89,7 +89,20 @@ diffdir(){
 		echo "Usage: diffdir dir_one dir_two"
 		return 16666
 	fi
-	diff --brief -bur "${1}" "${2}"
+#	diff --brief -bur "${1}" "${2}"
+        diffdir_out=$(diff --brief -bur "${1}" "${2}")
+
+        while read -r line
+        do
+             echo "$line"
+#             echo ${line} | sed -E 's/(^Files)[ ]+([^ ]*)([ ]+)and([ ]+)([^ ]+)(.*)/diff \2 \5/'
+        done < <(printf '%s\n' "${diffdir_out}")
+        echo "==================="
+        while read -r line
+        do
+#             echo "$line"
+             echo ${line} | sed -E 's/(^Files)[ ]+([^ ]*)([ ]+)and([ ]+)([^ ]+)(.*)/diff \2 \5/'
+        done < <(printf '%s\n' "${diffdir_out}")
 }
 
 tarx() {
@@ -206,6 +219,7 @@ function lgrep () {
 }
 
 alias n="node"
+alias b="bash"
 
 alias less="less -R"
 alias pstree="pstree -hp -s"
@@ -229,6 +243,7 @@ if [[ $? -eq 0 ]]; then
 fi
 ### -------- end of log login events and ips
 
+alias lsblk="lsblk -o NAME,FSTYPE,LABEL,SIZE,LABEL,TYPE,LABEL,MOUNTPOINT"
 
 # source vm_specific file at the end so overwrite works
 if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
