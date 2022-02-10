@@ -245,6 +245,25 @@ fi
 
 alias lsblk="lsblk -o NAME,FSTYPE,LABEL,SIZE,LABEL,TYPE,LABEL,MOUNTPOINT"
 
+function ddu {
+    L=$(du -sh "$@")                        ### human readable format
+    R=$(du -sm "$@")                        ### set block size MiB
+    LL=$(echo "$L" | awk '{print $1}')      ### keeps the first column from output (human readable format)
+    LR=$(echo "$L" | awk '{$1=""}{print}')  ### removes first column from output (file names)
+    RR=$(echo "$R" | awk '{$1=""}{print}')  ### removes first column from output (file names)
+    if [[ "$LR" == "$RR" ]]; then           ### ensure two outputs' file names match
+       paste <(echo "$LL") <(echo "$R")  | grep -E -v "^[^\s]+\s+1\s+"    ### ignores directories whose size is less than 1 MiB
+       echo "========="
+       paste <(echo "$LL") <(echo "$R")     ### combines first column of "du -sh" with all output of "du -sm"  ### thus, first column block-size = G, second column block size = M
+    else       ### if there is a mismatch, print both outputs
+        echo "$L"
+        echo "========= mismatch"
+        echo "$R"
+    fi
+}
+
+alias ddu="ddu"
+
 # source vm_specific file at the end so overwrite works
 if [ -f ${HOME}/dotfiles/.bashrc_vm_specific ]
 then
